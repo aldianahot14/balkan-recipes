@@ -13,6 +13,7 @@ const recipeSchema = new mongoose.Schema({
         type: String,
         required: true
     },
+    image: String 
     // Add any other fields you need for a recipe
 });
 
