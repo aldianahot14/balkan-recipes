@@ -3,9 +3,10 @@
 const express = require('express');
 const router = express.Router();
 const Recipe = require('../models/models.js'); // Adjust the path if necessary
+const { isLoggedIn } = require('../middleware/middleware.js');
 
 // Create a new recipe
-router.post('/recipes', async (req, res) => {
+router.post('/recipes', isLoggedIn, async (req, res) => {
     try {
         const newRecipe = await Recipe.create(req.body);
         res.status(201).json(newRecipe); // Respond with 201 (Created) status
@@ -15,7 +16,7 @@ router.post('/recipes', async (req, res) => {
 });
 
 // Get all recipes
-router.get('/recipes', async (req, res) => {
+router.get('/recipes', isLoggedIn, async (req, res) => {
     try {
         const recipes = await Recipe.find();
         res.json(recipes);
@@ -25,7 +26,7 @@ router.get('/recipes', async (req, res) => {
 });
 
 // Get a specific recipe by ID
-router.get('/recipes/:id', async (req, res) => {
+router.get('/recipes/:id', isLoggedIn, async (req, res) => {
     try {
         const recipe = await Recipe.findById(req.params.id);
         
@@ -41,7 +42,7 @@ router.get('/recipes/:id', async (req, res) => {
 });
 
 // Update a recipe by ID
-router.put('/recipes/:id', async (req, res) => {
+router.put('/recipes/:id', isLoggedIn, async (req, res) => {
     try {
         const updatedRecipe = await Recipe.findByIdAndUpdate(req.params.id, req.body, { new: true });
 
@@ -57,7 +58,7 @@ router.put('/recipes/:id', async (req, res) => {
 });
 
 // Delete a recipe by ID
-router.delete('/recipes/:id', async (req, res) => {
+router.delete('/recipes/:id', isLoggedIn, async (req, res) => {
     try {
         const deletedRecipe = await Recipe.findByIdAndRemove(req.params.id);
 
