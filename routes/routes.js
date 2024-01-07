@@ -41,21 +41,28 @@ router.get('/recipes/:id', isLoggedIn, async (req, res) => {
     }
 });
 
-// Update a recipe by ID
 router.put('/recipes/:id', isLoggedIn, async (req, res) => {
     try {
+        console.log('Request Params ID:', req.params.id);
+        console.log('Request Body:', req.body);
+
         const updatedRecipe = await Recipe.findByIdAndUpdate(req.params.id, req.body, { new: true });
+
+        console.log('Updated Recipe:', updatedRecipe);
 
         if (!updatedRecipe) {
             // If the recipe with the specified ID doesn't exist
+            console.log('Recipe not found');
             return res.status(404).json({ error: 'Recipe not found' });
         }
 
         res.json(updatedRecipe);
     } catch (error) {
+        console.error('Error:', error.message);
         res.status(500).json({ error: error.message });
     }
 });
+
 
 // Delete a recipe by ID
 router.delete('/recipes/:id', isLoggedIn, async (req, res) => {

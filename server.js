@@ -32,14 +32,6 @@ app.use("/todos", TodoRouter)
 
 app.use(bodyParser.json());
 
-// Connect to MongoDB using the environment variable
-// mongoose.connect(process.env.MONGODB_URI, { useNewUrlParser: true, useUnifiedTopology: true });
-
-
-
-// Use the CORS middleware
-// app.use(corsMiddleware);
-
 // Serve static files from the 'public' directory
 app.use(express.static('public'));
 
@@ -61,47 +53,3 @@ app.listen(PORT, () => {
   console.log(`Server is running on port ${PORT}`);
 });
 
-// Mock user array for testing purposes
-// const users = [];
-
-// app.use(express.json());
-
-// app.get('/users', (req, res) => {
-//   res.json(users);
-// });
-
-// app.post('/users', async (req, res) => {
-//   try {
-//     const salt = await bcrypt.genSalt();
-//     const hashedPassword = await bcrypt.hash(req.body.password, 10);
-//     const user = { name: req.body.name, password: hashedPassword };
-//     users.push(user);
-//     res.status(201).send();
-//   } catch (error) {
-//     console.error(error);
-//     res.status(500).send('Error creating user');
-//   }
-// });
-
-// app.post('/users/login', async (req, res) => {
-//   const user = users.find(user => user.name === req.body.name);
-
-//   if (user == null) {
-//     console.log('Cannot find user');
-//     return res.status(400).json({ message: 'Cannot find user' });
-//   }
-
-//   try {
-//     if (await bcrypt.compare(req.body.password, user.password)) {
-//       console.log('Success');
-//       res.status(200).json({ message: 'Success' });
-//     } else {
-//       console.log('Not Allowed');
-//       res.status(401).json({ message: 'Not Allowed' });
-//     }
-//   } catch (error) {
-//     console.error(error);
-//     console.log('Error during login');
-//     res.status(500).json({ message: 'Error during login' });
-//   }
-// });
