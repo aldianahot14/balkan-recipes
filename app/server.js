@@ -1,7 +1,7 @@
 // server.js
 require('dotenv').config();
 // const { connect } = require('mongoose');
-const mongoose = require ("./database/connection.js")
+const mongoose = require ("../database/connection.js")
 const express = require('express');
 const morgan = require("morgan");
 const {log} = require("mercedlogger")
@@ -11,10 +11,10 @@ const bcrypt = require('bcrypt');
 // const { isLoggedin } = require('./middleware/middleware.js');
 
 const bodyParser = require('body-parser');
-const { corsMiddleware } = require('./middleware/middleware.js');
-const recipeRoutes = require('./routes/routes'); // Adjust the path if necessary
-const UserRouter = require("../balkan-recipes/controllers/user.js") //import User Routes
-const TodoRouter = require("./controllers/Todo.js")
+const { corsMiddleware } = require('../middleware/middleware.js');
+const recipeRoutes = require('../routes/routes.js'); // Adjust the path if necessary
+const UserRouter = require("../controllers/user.js") //import User Routes
+const TodoRouter = require("../controllers/Todo.js")
 
 const PORT = process.env.PORT || 3000;
 
