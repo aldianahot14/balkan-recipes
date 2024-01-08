@@ -31,3 +31,11 @@ Maintain a personalized list of ingredients. Easily edit and update the ingredie
 7. Step-by-Step Instructions
 Follow detailed step-by-step cooking instructions for each recipe. Clear and concise guidance ensures a successful cooking experience every time.
 
+# Resources
+- Chat GPT
+- Labs
+
+# Next Steps
+- Add a favorites button
+- Allow other users to view another persons account 
+
