@@ -16,15 +16,14 @@ This Balkan Recipe API is a web application designed to provide users with an in
 
 - I want to be able to see the recipe's name clearly.
 - I want High-Quality Images: Appetizing images of the finished dish and key steps in the cooking process.
-- I want to be able to be a ave Button: Option to save the recipe for future reference.
-- I want a detailed list of ingredients, including quantities and measurements.
+- I want to be able to be edit a recipe.
+- I want to be able to create a recipe.
+- I want a detailed list of ingredients, I want to be able to edit the ingreditents on my account
 - I want step-by-step cooking instructions.
 
 #### Stretch Goals
 
 - I want to be able to create an account simple my creating user name and password.
-- I would like a Share Button: Ability to share the recipe  with friends.
-- AAU I want a Search Bar to search for specific recipes.
 - AAU I want to be able to view my History even if i didn't klick "like" on the recipe.
 - AAU I want to see other people's reviews.
 
