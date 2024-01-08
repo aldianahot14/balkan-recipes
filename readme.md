@@ -6,9 +6,11 @@ Getting Started:
 # Click this link:
 https://feature-refactor--balkandishes.netlify.app/
 
-You'll want to first create an account and, then log into that account. 
-Once you log into you account, view all reciepes available 
-At this point since this is your page, you can edit recipes, and create new ones!
+1. You'll want to first create an account
+2. Once your account is created, then log into your account
+3. Once you log into you account, click on view all the reciepes that are available
+4. At this point since this is your page, you can click on any recipe and edit the recipie you choose
+5. On the top right corner you can and create new recipes! 
 
 
 
